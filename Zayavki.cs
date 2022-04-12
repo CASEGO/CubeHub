@@ -52,6 +52,8 @@ namespace Новая_курсовая
 
         private void Form3_Load(object sender, EventArgs e)
         {
+            // TODO: данная строка кода позволяет загрузить данные в таблицу "aRM_KafeDataSet.Заявки_на_работу". При необходимости она может быть перемещена или удалена.
+            this.заявки_на_работуTableAdapter.Fill(this.aRM_KafeDataSet.Заявки_на_работу);
 
         }
 

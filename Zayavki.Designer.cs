@@ -29,6 +29,7 @@ namespace Новая_курсовая
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.button5 = new System.Windows.Forms.Button();
             this.button4 = new System.Windows.Forms.Button();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
@@ -39,9 +40,21 @@ namespace Новая_курсовая
             this.button2 = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.aRM_KafeDataSet = new Новая_курсовая.ARM_KafeDataSet();
+            this.заявкиНаРаботуBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.заявки_на_работуTableAdapter = new Новая_курсовая.ARM_KafeDataSetTableAdapters.Заявки_на_работуTableAdapter();
+            this.кодDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.фИОDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.должностьDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.стажDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.полDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.датаDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.телефонDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.groupBox2.SuspendLayout();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.aRM_KafeDataSet)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.заявкиНаРаботуBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // button5
@@ -143,7 +156,17 @@ namespace Новая_курсовая
             // 
             // dataGridView1
             // 
+            this.dataGridView1.AutoGenerateColumns = false;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.кодDataGridViewTextBoxColumn,
+            this.фИОDataGridViewTextBoxColumn,
+            this.должностьDataGridViewTextBoxColumn,
+            this.стажDataGridViewTextBoxColumn,
+            this.полDataGridViewTextBoxColumn,
+            this.датаDataGridViewTextBoxColumn,
+            this.телефонDataGridViewTextBoxColumn});
+            this.dataGridView1.DataSource = this.заявкиНаРаботуBindingSource;
             this.dataGridView1.Location = new System.Drawing.Point(9, 140);
             this.dataGridView1.Margin = new System.Windows.Forms.Padding(2);
             this.dataGridView1.Name = "dataGridView1";
@@ -151,6 +174,62 @@ namespace Новая_курсовая
             this.dataGridView1.RowTemplate.Height = 24;
             this.dataGridView1.Size = new System.Drawing.Size(582, 215);
             this.dataGridView1.TabIndex = 8;
+            // 
+            // aRM_KafeDataSet
+            // 
+            this.aRM_KafeDataSet.DataSetName = "ARM_KafeDataSet";
+            this.aRM_KafeDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // заявкиНаРаботуBindingSource
+            // 
+            this.заявкиНаРаботуBindingSource.DataMember = "Заявки на работу";
+            this.заявкиНаРаботуBindingSource.DataSource = this.aRM_KafeDataSet;
+            // 
+            // заявки_на_работуTableAdapter
+            // 
+            this.заявки_на_работуTableAdapter.ClearBeforeFill = true;
+            // 
+            // кодDataGridViewTextBoxColumn
+            // 
+            this.кодDataGridViewTextBoxColumn.DataPropertyName = "Код";
+            this.кодDataGridViewTextBoxColumn.HeaderText = "Код";
+            this.кодDataGridViewTextBoxColumn.Name = "кодDataGridViewTextBoxColumn";
+            // 
+            // фИОDataGridViewTextBoxColumn
+            // 
+            this.фИОDataGridViewTextBoxColumn.DataPropertyName = "ФИО";
+            this.фИОDataGridViewTextBoxColumn.HeaderText = "ФИО";
+            this.фИОDataGridViewTextBoxColumn.Name = "фИОDataGridViewTextBoxColumn";
+            // 
+            // должностьDataGridViewTextBoxColumn
+            // 
+            this.должностьDataGridViewTextBoxColumn.DataPropertyName = "Должность";
+            this.должностьDataGridViewTextBoxColumn.HeaderText = "Должность";
+            this.должностьDataGridViewTextBoxColumn.Name = "должностьDataGridViewTextBoxColumn";
+            // 
+            // стажDataGridViewTextBoxColumn
+            // 
+            this.стажDataGridViewTextBoxColumn.DataPropertyName = "Стаж";
+            this.стажDataGridViewTextBoxColumn.HeaderText = "Стаж";
+            this.стажDataGridViewTextBoxColumn.Name = "стажDataGridViewTextBoxColumn";
+            // 
+            // полDataGridViewTextBoxColumn
+            // 
+            this.полDataGridViewTextBoxColumn.DataPropertyName = "Пол";
+            this.полDataGridViewTextBoxColumn.HeaderText = "Пол";
+            this.полDataGridViewTextBoxColumn.Name = "полDataGridViewTextBoxColumn";
+            // 
+            // датаDataGridViewTextBoxColumn
+            // 
+            this.датаDataGridViewTextBoxColumn.DataPropertyName = "Дата";
+            this.датаDataGridViewTextBoxColumn.HeaderText = "Дата";
+            this.датаDataGridViewTextBoxColumn.Name = "датаDataGridViewTextBoxColumn";
+            // 
+            // телефонDataGridViewTextBoxColumn
+            // 
+            this.телефонDataGridViewTextBoxColumn.DataPropertyName = "Телефон";
+            this.телефонDataGridViewTextBoxColumn.HeaderText = "Телефон";
+            this.телефонDataGridViewTextBoxColumn.Name = "телефонDataGridViewTextBoxColumn";
             // 
             // Zayavki
             // 
@@ -170,6 +249,8 @@ namespace Новая_курсовая
             this.groupBox2.PerformLayout();
             this.groupBox1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.aRM_KafeDataSet)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.заявкиНаРаботуBindingSource)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -186,5 +267,15 @@ namespace Новая_курсовая
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.TextBox textBox1;
+        private ARM_KafeDataSet aRM_KafeDataSet;
+        private System.Windows.Forms.BindingSource заявкиНаРаботуBindingSource;
+        private ARM_KafeDataSetTableAdapters.Заявки_на_работуTableAdapter заявки_на_работуTableAdapter;
+        private System.Windows.Forms.DataGridViewTextBoxColumn кодDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn фИОDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn должностьDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn стажDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn полDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn датаDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn телефонDataGridViewTextBoxColumn;
     }
 }
