@@ -70,11 +70,13 @@ namespace Новая_курсовая
         private void button1_Click(object sender, EventArgs e)
         {
             int kod = Convert.ToInt32(textBox2.Text);
-            //String staff = "INSERT INTO Заказы ([Код заказа],[Номер заказа],[ФИО],[Дата доставки заказа],[Адрес заказа],[Номер телефона],[Блюдо],[Напиток],[Доставщик]) VALUES(" + kod + ",'" + NZ + "','" + Name + "', '" + Time + "','" + Adres + "','" + Phone + "', '" + dish + "','" + drink + "','" + courier + "')";
-            //INSERT INTO таблица2(ID, NAME) SELECT t1.ID, t1.NAME FROM таблица1 t1 LEFT JOIN таблица2 t2ON t1.ID = t2.IDWHERE t2.ID IS NULL
-            string query = "DELETE FROM [Заявки на работу] WHERE [Код] = " + kod;
+            var time = DateTime.Today.ToShortDateString();
+            string query = $"INSERT INTO Сотрудники SELECT ФИО, Должность, Дата FROM [Заявки на работу] WHERE Код = {kod}";
             OleDbCommand command = new OleDbCommand(query, myConnection);
             command.ExecuteNonQuery();
+            string delete = $"DELETE FROM [Заявки на работу] WHERE Код = {kod}";
+            OleDbCommand commandel = new OleDbCommand(delete, myConnection);
+            commandel.ExecuteNonQuery();
             MessageBox.Show("Данные обновлены!");
             this.заявки_на_работуTableAdapter.Fill(this.aRM_KafeDataSet.Заявки_на_работу);
             textBox2.Clear();
@@ -109,7 +111,7 @@ namespace Новая_курсовая
             this.заявки_на_работуTableAdapter.Fill(this.aRM_KafeDataSet.Заявки_на_работу);
             textBox2.Clear();
         }
-
+        
    
     }
 }

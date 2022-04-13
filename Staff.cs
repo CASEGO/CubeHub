@@ -99,5 +99,17 @@ namespace Новая_курсовая
             this.сотрудникиTableAdapter.Fill(this.aRM_KafeDataSet.Сотрудники);
             textBox2.Clear();
         }
+
+        private void button7_Click(object sender, EventArgs e)
+        {
+            int kod = Convert.ToInt32(textBox3.Text);
+            string query = "UPDATE Сотрудники SET Зарплата ='" + textBox4.Text + "' WHERE [Код] = " + kod;
+            OleDbCommand command = new OleDbCommand(query, myConnection);
+            command.ExecuteNonQuery();
+            MessageBox.Show("Данные обновлены!");
+            this.сотрудникиTableAdapter.Fill(this.aRM_KafeDataSet.Сотрудники);
+            textBox3.Clear();
+            textBox4.Clear();
+        }
     }
 }
